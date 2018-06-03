@@ -8,11 +8,18 @@ import java.io.IOException;
  */
 
 public class App {
-
     
-    public static void main(String[] args) throws IOException {
-        Readfile read = new Readfile();
-        read.input("cities.txt"); // URL for txt file initial data
-    }
-    
+    public static void main(String[] args)  {
+        
+        try {
+            AnalyzeFile inputFile = new AnalyzeFile("cities.txt");            
+            // URL for txt file initial data
+            inputFile.startAnalyzation();
+        } catch (IOException ex) {
+            System.err.println("Parsing Exception!");
+            ex.printStackTrace();
+        }
+       
+        
+    }    
 }
